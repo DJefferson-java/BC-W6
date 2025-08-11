@@ -10,6 +10,8 @@ public class Player {
 	private int score;
 	//Player's name
 	private String name;
+	//Indicates what Round we are on
+	private int round = 0;
 	
 	//Tells the name of the player and the card pulled from the deck
 	public void describe(Deck deckOfCards)  {
@@ -32,6 +34,7 @@ public class Player {
 	public void incrementScore() {
 		setScore(getScore() + 1);
 	}
+	
 	//Gets the name of the player
 	public String getName() {
 		return name;
@@ -70,4 +73,16 @@ public class Player {
 	public boolean isEqual(String value1, String value2) {	
 		return value1.equals(value2);		
 	}
+
+	public int getRound() {
+		return round;
+	}
+	public int setRound(int round) {
+		return this.round= round;
+	}
+
+	public int incrementRound() {
+		return setRound(getRound() + 1);
+	}
+	
 }
