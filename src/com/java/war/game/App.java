@@ -1,6 +1,5 @@
 package com.java.war.game;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -54,26 +53,34 @@ public class App {
 		int player1Value = player1.compareValue1(value1, value2);
 		int player2Value = player2.compareValue2(value1, value2);
 		boolean isEqual = player1.isEqual(value1, value2);
-		
+		int round = player1.incrementRound();
 		
 		//Comparing each value and seeing who won the draw here
-		if(player1Value > player2Value) {
+		if(player1Value > player2Value) {		
 			player1.incrementScore();
+			System.out.println("Round " + round);
+			System.out.println("____________________________");
 			System.out.println(player1.getName() + " Card : " + playerOneFlip.describe());
-			System.out.println(player2.getName() + " Card : " + playerTwoFlip.describe());
-			System.out.println(player1.getName() + " Gets the point! The card was: "
-				+ 	playerOneFlip.describe());
 			System.out.println("Total Points for: " + player1.getName() + " " + player1.getScore());
+			System.out.println(player2.getName() + " Card : " + playerTwoFlip.describe());
+			System.out.println("Total Points for: " + player2.getName() + " " + player2.getScore());
+			System.out.println(player1.getName() + " Gets the point! The card was: "
+				+ 	playerOneFlip.describe());			
 			System.out.println();
 		}else if (player2Value > player1Value) {
 			player2.incrementScore();
+			System.out.println("Round " + round);
+			System.out.println("____________________________");
 			System.out.println(player1.getName() + " Card : " + playerOneFlip.describe());
+			System.out.println("Total Points for: " + player1.getName() + " " + player1.getScore());
 			System.out.println(player2.getName() + " Card : " + playerTwoFlip.describe());
+			System.out.println("Total Points for: " + player2.getName() + " " + player2.getScore());
 			System.out.println(player2.getName() + " Gets the point! The card was: " 
 					+ playerTwoFlip.describe());
-			System.out.println("Total Points for: " + player2.getName() + " " + player2.getScore());
 			System.out.println();
 		}else if (isEqual){
+			System.out.println("Round " + round);
+			System.out.println("____________________________");
 			System.out.println(player1.getName() + " Card : " + playerOneFlip.describe());
 			System.out.println(player2.getName() + " Card : " + playerTwoFlip.describe());
 			System.out.println("It's a Tie! No point awarded" );
@@ -84,18 +91,22 @@ public class App {
 	
 	//Reveals the winner of the game. If no winner it is a draw.
 	if (player1.getScore() > player2.getScore()) {
+		System.out.println("End Results");
+		System.out.println("____________________");
 		System.out.println();
 		System.out.println("Total Points for: " + player1.getName() + " " + player1.getScore());
 		System.out.println("Total Points for: " + player2.getName() + " " + player2.getScore());
-		System.out.println( player1.getName() + 
-				" score is: " + player1.getScore() + " ." + " You win!");
+		System.out.println( player1.getName()  + " You win the Game!");
 	}else if (player2.getScore() > player1.getScore()) {
+		System.out.println("End Results");
+		System.out.println("____________________");
 		System.out.println();
 		System.out.println("Total Points for: " + player2.getName() + " " + player2.getScore());
 		System.out.println("Total Points for: " + player1.getName() + " " + player1.getScore());
-		System.out.println(player2.getName()
-				+ " score is: " + player2.getScore() + "." + " You win!");
+		System.out.println(player2.getName() + " You win the Game!");
 	}else {
+		System.out.println("End Results");
+		System.out.println("____________________");
 		System.out.println("Total Points for: " + player2.getName() + " " + player2.getScore());
 		System.out.println("Total Points for: " + player1.getName() + " " + player1.getScore());
 		System.out.println("It's a draw! No winner, try again!");
