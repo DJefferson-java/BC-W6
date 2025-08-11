@@ -53,12 +53,13 @@ public class App {
 		int player1Value = player1.compareValue1(value1, value2);
 		int player2Value = player2.compareValue2(value1, value2);
 		boolean isEqual = player1.isEqual(value1, value2);
+		//Increments the round
 		int round = player1.incrementRound();
 		
 		//Comparing each value and seeing who won the draw here
 		if(player1Value > player2Value) {		
 			player1.incrementScore();
-			System.out.println("Round " + round);
+			System.out.println("Round " + round); //Prints what round we are in
 			System.out.println("____________________________");
 			System.out.println(player1.getName() + " Card : " + playerOneFlip.describe());
 			System.out.println("Total Points for: " + player1.getName() + " " + player1.getScore());
@@ -69,7 +70,7 @@ public class App {
 			System.out.println();
 		}else if (player2Value > player1Value) {
 			player2.incrementScore();
-			System.out.println("Round " + round);
+			System.out.println("Round " + round);  //Prints what round we are in
 			System.out.println("____________________________");
 			System.out.println(player1.getName() + " Card : " + playerOneFlip.describe());
 			System.out.println("Total Points for: " + player1.getName() + " " + player1.getScore());
@@ -79,7 +80,7 @@ public class App {
 					+ playerTwoFlip.describe());
 			System.out.println();
 		}else if (isEqual){
-			System.out.println("Round " + round);
+			System.out.println("Round " + round);  //Prints what round we are in
 			System.out.println("____________________________");
 			System.out.println(player1.getName() + " Card : " + playerOneFlip.describe());
 			System.out.println(player2.getName() + " Card : " + playerTwoFlip.describe());
