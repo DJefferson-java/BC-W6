@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Player {
 	//Creates a list of cards.
-	public List<Card> hand = new ArrayList<Card>();
+	private List<Card> hand =  new ArrayList<Card>();
 	//To keep score
 	private int score;
 	//Player's name
@@ -24,9 +24,8 @@ public class Player {
 	}
 	
 	//Deals the cards to each player to create each players hand.
-	public void draw(Deck deckOfCards) {
-	Card newCard =	deckOfCards.draw();
-	hand.add(newCard);
+	public Card draw(Deck deckOfCards) {
+	return deckOfCards.draw();	
 	}
 	
 	//Increments by one the score/total points.
@@ -49,6 +48,26 @@ public class Player {
 	public void setScore(int score) {
 		this.score = score;
 	}
- 
- 
+	//Creates the players hand
+	public List<Card> setPlayerHand(Card newCard){
+		 hand.add(newCard);
+	return hand;
+	}
+	//Retrieves the players hand after created
+	public List<Card> getPlayerHand(){
+	return this.hand;
+	}
+	
+	//Method to compare strings
+	public int compareValue1(String value1, String value2) {	
+		return value1.compareTo(value2);		
+	}
+	//Method to compare strings
+	public int compareValue2(String value1, String value2) {	
+		return value2.compareTo(value1);		
+	}
+	//Method to see if cards are equal
+	public boolean isEqual(String value1, String value2) {	
+		return value1.equals(value2);		
+	}
 }
