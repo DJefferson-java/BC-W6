@@ -10,12 +10,12 @@ public class Deck {
 	
 	//Creates the deck of cards
 	public Deck() {  
-     String[] names = {"Hearts", "Diamonds", "Clubs", "Spades", "Jack", "Queen", "King", "Ace"};
-     int[] values = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+     String[] names = {"Hearts", "Diamonds", "Clubs", "Spades"};
+     String[] values = {"2","3","4","5","6","7","8","9","10","Jack", "Queen", "King", "Ace"};
      
      for(String name : names ) {
-    	 for(int i=0; i < values.length; i++) {
-    		 cards.add(new Card(name, values[i]));
+    	 for(String value : values) {
+        		 cards.add(new Card(name, value));
     	 }
      }    
 	}

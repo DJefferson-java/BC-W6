@@ -2,22 +2,22 @@ package com.java.war.game;
 
 public class Card {
     //Value of the card
-	private int value;
+	private String value;
 	//Name of the card
 	private String name;
 	
 	//Constructor to set the card
-	public Card(String name, int value) {
+	public Card(String name, String value) {
 		this.value = value;
 		this.name = name;
 	};
 	
 	//Gets the value of the card
-	public int getValue() {
+	public String getValue() {
 		return value;
 	}
 	//Sets the value of the card
-	public void setValue(int value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 	//Gets the name of the card
@@ -30,7 +30,8 @@ public class Card {
 	}
 	//Gives a description of the card created.
 	public String describe() {
-		return (this.name + " " + String.valueOf(this.value));
+		return (this.value + " Of " + this.name);
 	}
+
 	
 }
