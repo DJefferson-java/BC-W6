@@ -73,14 +73,17 @@ public class Player {
 	public boolean isEqual(String value1, String value2) {	
 		return value1.equals(value2);		
 	}
-
+	
+	//Get what round we are in
 	public int getRound() {
 		return round;
 	}
+	//Sets what round we are in
 	public int setRound(int round) {
 		return this.round= round;
 	}
 
+	//Increments the rounds
 	public int incrementRound() {
 		return setRound(getRound() + 1);
 	}
